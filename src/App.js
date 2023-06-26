@@ -1,11 +1,11 @@
 import './App.css';
 import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
-import NavBar from "./NavBar";
-import Movies from "./Movies"
-import Favorites from "./Favorites"
-import AddnewMovie from "./AddnewMovie"
-import Home from "./Home"
+import NavBar from "./components/NavBar/NavBar";
+import Movies from "./components/Movies/Movies"
+import Favorites from "./components/Favorites/Favorites"
+import AddnewMovie from "./components/Addnew/AddnewMovie"
+import Home from "./components/Home/Home"
 // import Home from "./Movies";
 // import About from "./About";
 // import ProjectList from "./ProjectList";
