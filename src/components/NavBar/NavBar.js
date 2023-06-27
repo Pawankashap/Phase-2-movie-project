@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
+import "./NavBar.css";
 
 function NavBar() {
     return (
         <nav>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink to="/movies">Movies</NavLink>
-            <NavLink to="/favorite">Favorite Movies</NavLink>
-            <NavLink to="/addnewmovie">Add New Movie</NavLink>
+            <NavLink className="title" exact to="/">Home</NavLink>
+            <NavLink className="title" to="/movies">Movies</NavLink>
+            <NavLink className="title" to="/favorite">Favorite Movies</NavLink>
+            <NavLink className="title" to="/addnewmovie">Add New Movie</NavLink>
         </nav>
     );
 }
