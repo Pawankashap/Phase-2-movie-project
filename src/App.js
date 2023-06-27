@@ -6,6 +6,7 @@ import Movies from "./components/Movies/Movies"
 import Favorites from "./components/Favorites/Favorites"
 import AddnewMovie from "./components/Addnew/AddnewMovie"
 import Home from "./components/Home/Home"
+import EditMovie from "./components/Movies/EditMovie";
 // import Home from "./Movies";
 // import About from "./About";
 // import ProjectList from "./ProjectList";
@@ -20,15 +21,20 @@ function App() {
         <Route path="/movies">
             <Movies />
         </Route>
-        <Route exact path="/addnewmovie">
+        <Route  path="/addnewmovie">
             <AddnewMovie />
         </Route>
-        <Route exact path="/favorite">
+        <Route  path="/favorite">
             <Favorites />
         </Route>
-        {/* <Route path="/projects/:id">
+        <Route  path="/editmovie/:id">
+            console.log("run edit section")
+            <EditMovie />
+        </Route>
+        {/* <Route path="/movies/:id">
             <Favorites />
         </Route> */}
+
         <Route exact path="/">
             <Home />
         </Route>
