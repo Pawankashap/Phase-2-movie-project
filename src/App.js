@@ -55,6 +55,42 @@ function App() {
             .catch(error => console.log(error));
             console.log('after favorite update:  ',movies)
   }
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("");
+  const [favorite, setFavorite] = useState(false);
+  const [type, setType] = useState("Action");
+  const [relasedate, setRelasedate] = useState(new Date());
+  function handleAddmovie(e) {
+    e.preventDefault()
+    console.log('on handle add movie  ')
+    const formData = { name, image, favorite,type,relasedate }
+    
+    formData.relasedate=relasedate
+    console.log(formData)
+    fetch('http://localhost:3001/movies', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          // Handle the response data
+          console.log(data);
+          setMovie([...movies, data])
+        })
+        .catch(error => console.log(error));
+}
+const onChangeDate = (date) => {
+    console.log("run on change date " , date)
+    const selectdate=date.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      })
+    setRelasedate(selectdate);
+  };
 
   return (
     <div>
@@ -65,7 +101,7 @@ function App() {
             <Movies movies={movies} setMovie={setMovie} handleDelete={handleDelete} handleFavorite={handleFavorite}/>
         </Route>
         <Route  path="/addnewmovie">
-            <AddnewMovie />
+            <AddnewMovie name={name} setName={setName} image={image} setImage={setImage} favorite={favorite} setFavorite={setFavorite} type={type} setType={setType} relasedate={relasedate} setRelasedate={setRelasedate} handleAddmovie={handleAddmovie} onChangeDate={onChangeDate}/>
         </Route>
         <Route  path="/favorite">
             <Favorites movies={movies} setMovie={setMovie} handleDelete={handleDelete}  />
