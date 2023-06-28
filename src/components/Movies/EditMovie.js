@@ -50,11 +50,12 @@ function EditMovie({movies,setMovie}) {
             <div className="mr-4 pr-4">
                 <label htmlFor="name">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} />
-                
+            
+            
                 <label htmlFor="about">Image URL:</label>
                 <input type="text" id="about" value={image} onChange={e => setImage(e.target.value)} />
-            </div>
-            <div  className="mr-4 pr-4">
+            
+            
                 <label htmlFor="about">favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <select class="form-select" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(e.target.value)}>
                     
@@ -64,9 +65,8 @@ function EditMovie({movies,setMovie}) {
 
                 <label htmlFor="about">Movie Release Date:</label>
                 <DatePicker className="Datepicker" 
-                    //value={relasedate}
                     //selected={relasedate}
-                    dateFormat="MM-dd-yyyy"
+                    dateFormat="MM/dd/yyyy"
                     //onChange={date => setRelasedate(date)}
                     onChange={handleDate}
                     value={relasedate}
