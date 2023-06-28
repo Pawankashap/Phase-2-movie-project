@@ -28,7 +28,6 @@ function App() {
             <Favorites />
         </Route>
         <Route  path="/editmovie/:id">
-            console.log("run edit section")
             <EditMovie />
         </Route>
         {/* <Route path="/movies/:id">

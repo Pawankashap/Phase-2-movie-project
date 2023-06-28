@@ -16,7 +16,7 @@ function Movies() {
         .then(data => setMovie((movies)=> movies= data))
   }, [])
 
-  console.log( movies)
+  //console.log( movies)
   //debugger
 
   const movieDetails = movies.map((movie) => (
@@ -36,7 +36,7 @@ function Movies() {
 
     return (
         <section id="projects">
-        <h2>Movies</h2>
+        <h2>All Movies</h2>
         <Container fluid className='gx-0'>
         <div id="movies-list" >{movieDetails}</div>
         </Container>

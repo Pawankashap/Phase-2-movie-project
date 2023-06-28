@@ -7,16 +7,9 @@ import AddnewMovie from '../Addnew/AddnewMovie'
 import EditMovie from "../Movies/EditMovie";
 import ReactDOMServer from 'react-dom/server';
 
-
-//  '../assets/myImage.png';
-
-const img_src = 'https://th.bing.com/th?id=OIP.J9DjjAB_23z9Fv_Y7czqHgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2';
-
-
 function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
   
   const [isFavorite, setIsFavorite] = useState(favorite);
-  const [showPopup, setShowPopup] = useState(false);
   const history = useHistory();
 
   const toggleFavorite = () => {
@@ -26,17 +19,16 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
     setIsFavorite(!isFavorite);
   };
 
-  const handleClick = (e) => {
+  const Editmovie = (e) => {
        //console.log(movies)
        history.push({pathname:`/editmovie/${e.target.id}`,movies,setMovie}); // Specify the path to redirect to
-       setShowPopup(true);
+     
     
   };
-
-  
-  
-
-
+  const Deletemovie=(e)=>{
+    console.log("delete button work ")
+    console.log(e.target.id)
+  }
     return (
         
         <React.Fragment>
@@ -50,10 +42,10 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
         </Card.Body>
         <Card.Footer className= "text-center">
           {/* <Card.Link className="float-left" href="#">Edit</Card.Link> */}
-          <button  className="float-left btn"  id={id} onClick={handleClick}>Edit</button>
-      
+          <button  className="float-left btn"  id={id} onClick={Editmovie}>Edit</button>
 
-          <Card.Link  href="#">Delete</Card.Link>
+          <button  className="btn"  id={id} onClick={Deletemovie}>Delete</button>
+          {/* <Card.Link  href="#">Delete</Card.Link> */}
           <img 
           className="float-right"
       src={myImage}
