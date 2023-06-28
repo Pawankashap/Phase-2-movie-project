@@ -11,10 +11,65 @@ function Favorites() {
           .then(r => r.json())
           .then(data => {
             const filteredMovies = data.filter(movie => movie.favorite === true);
-            setMovie(()=>filteredMovies)
+            setMovie(filteredMovies)
           })
           .catch(error => console.log(error));
     }, [])
+    const handleDelete = (id) => {
+      fetch(`http://localhost:3001/movies/${id}`, {
+      method: 'DELETE'
+      })
+          .then(response => {
+           const updatedMovieRecords = movies.filter(movie => movie.id !== parseInt(id,10));
+           setMovie(updatedMovieRecords);
+        })
+        .catch(error => console.log(error));
+  
+    };
+    
+
+
+    const handleFavorite=(id,isfavorite)=>{
+
+      const updatedRecords = movies.map(record => {
+        if (record.id === parseInt(id,10)) {
+            return { ...record, 'favorite': isfavorite };
+        }
+        return record;
+        });
+        console.log(updatedRecords)
+        setMovie(()=> updatedRecords)
+        console.log(movies)
+
+      // fetch(`http://localhost:3001/movies/${id}`, {
+      //     method: 'PATCH',
+      //     headers: {
+      //        Accept: "application/json",
+      //       'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify({
+      //         favorite:isfavorite
+      //     })
+      //   })
+      //     .then(response => response.json())
+      //     .then(data => {
+      //         const updatedRecords = movies.map(record => {
+      //         if (record.id === parseInt(id,10)) {
+      //             return { ...record, 'favorite': isfavorite };
+      //         }
+      //         return record;
+      //         });
+      //         setMovie(()=> updatedRecords)
+      //     })
+      //     .catch(error => console.log(error));
+
+  // const updatedMovieRecords = movies.filter(movie => movie.favorite !== JSON.parse(false));
+  // setMovie(updatedMovieRecords);
+  }
+
+
+
+
   
     const movieDetails = movies.map((movie) => (
       <Moviescard
@@ -27,9 +82,13 @@ function Favorites() {
           type={movie.type}
           movies={movie}
           setMovie={setMovie}
+          handleDelete={handleDelete}
+          handleFavorite={handleFavorite}
   
       />
        ))
+
+       
   
       return (
           <section id="projects">
