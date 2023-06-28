@@ -13,7 +13,10 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie,hand
   const history = useHistory();
 
   const toggleFavorite = (e) => {
-      setIsFavorite(()=>!isFavorite);
+    console.log(isFavorite)
+    setIsFavorite(()=>!isFavorite);
+    
+    
       handleFavorite(e.target.id,!isFavorite)
   };
 

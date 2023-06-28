@@ -77,7 +77,7 @@ function EditMovie({movies,setMovie}) {
             
             
                 <label htmlFor="about">Favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(JSON.parse(e.target.value))}>
+                <select className="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(JSON.parse(e.target.value))}>
                     
                     <option value="true">Yes</option>
                     <option value="false">No</option>
@@ -93,7 +93,7 @@ function EditMovie({movies,setMovie}) {
                 />
                 
                 <label htmlFor="about">Type: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="form-select typeclass" aria-label="Default select example" value={type} onChange={e=> setType(e.target.value)}>
+                <select className="form-select typeclass" aria-label="Default select example" value={type} onChange={e=> setType(e.target.value)}>
                     <option value="Action">Action</option>
                     <option value="Comedy">Comedy</option>
                     <option value="Drama">Drama</option>
