@@ -7,16 +7,14 @@ import AddnewMovie from '../Addnew/AddnewMovie'
 import EditMovie from "../Movies/EditMovie";
 import ReactDOMServer from 'react-dom/server';
 
-function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
+function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie,handleDelete,handleFavorite}) {
   
   const [isFavorite, setIsFavorite] = useState(favorite);
   const history = useHistory();
 
-  const toggleFavorite = () => {
-    //console.log(isFavorite)
-    favorite=(!isFavorite)
-    console.log('state value ' + favorite)
-    setIsFavorite(!isFavorite);
+  const toggleFavorite = (e) => {
+      setIsFavorite(()=>!isFavorite);
+      handleFavorite(e.target.id,!isFavorite)
   };
 
   const Editmovie = (e) => {
@@ -27,7 +25,11 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
   };
   const Deletemovie=(e)=>{
     console.log("delete button work ")
-    console.log(e.target.id)
+    //console.log(e.target.id)
+    handleDelete(e.target.id)
+    
+  
+
   }
     return (
         
@@ -48,6 +50,7 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie}) {
           {/* <Card.Link  href="#">Delete</Card.Link> */}
           <img 
           className="float-right"
+          id={id}
       src={myImage}
       alt={isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
       onClick={toggleFavorite}

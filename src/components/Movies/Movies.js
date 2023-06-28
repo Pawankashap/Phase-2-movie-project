@@ -17,7 +17,46 @@ function Movies() {
   }, [])
 
   //console.log( movies)
+
+
+
   //debugger
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3001/movies/${id}`, {
+    method: 'DELETE'
+    })
+        .then(response => {
+         const updatedMovieRecords = movies.filter(movie => movie.id !== parseInt(id,10));
+         setMovie(updatedMovieRecords);
+      })
+      .catch(error => console.log(error));
+
+  };
+
+  const handleFavorite=(id,isfavorite)=>{
+        fetch(`http://localhost:3001/movies/${id}`, {
+            method: 'PATCH',
+            headers: {
+               Accept: "application/json",
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                favorite:isfavorite
+            })
+          })
+            .then(response => response.json())
+            .then(data => {
+                const updatedRecords = movies.map(record => {
+                if (record.id === parseInt(id,10)) {
+                    return { ...record, 'favorite': isfavorite };
+                }
+                return record;
+                });
+                setMovie((movies)=> movies=updatedRecords)
+            })
+            .catch(error => console.log(error));
+  }
 
   const movieDetails = movies.map((movie) => (
     <Moviescard
@@ -30,6 +69,8 @@ function Movies() {
         type={movie.type}
         movies={movie}
         setMovie={setMovie}
+        handleDelete={handleDelete}
+        handleFavorite={handleFavorite}
 
     />
      ))
