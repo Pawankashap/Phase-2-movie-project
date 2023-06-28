@@ -16,11 +16,23 @@ function AddnewMovie({movies,setMovie}) {
    
      function handleSubmit(e) {
         e.preventDefault()
-        const formData = {
-            movie: { name, image, favorite,type,relasedate }
-        }
-        formData.movie.relasedate=relasedate
+        const formData = { name, image, favorite,type,relasedate }
+        
+        formData.relasedate=relasedate
         console.log(formData)
+        fetch('http://localhost:3001/movies', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+            .then(response => response.json())
+            .then(data => {
+              // Handle the response data
+              console.log(data);
+            })
+            .catch(error => console.log(error));
     }
     
     const handleDate = (date) => {
@@ -48,10 +60,10 @@ function AddnewMovie({movies,setMovie}) {
             
             
                 <label htmlFor="about">Favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(e.target.value)}>
+                <select class="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(JSON.parse(e.target.value))}>
                     
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
+                    <option value= 'true'>Yes</option>
+                    <option value='false'>No</option>
                     </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 <label htmlFor="about">Release Date:</label>
