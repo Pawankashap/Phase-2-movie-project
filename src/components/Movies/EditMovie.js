@@ -14,19 +14,21 @@ function EditMovie({movies,setMovie}) {
     const [name, setName] = useState("");
     const [image, setImage] = useState("");
     const [favorite, setFavorite] = useState("");
+    const [type, setType] = useState("");
     const [relasedate, setRelasedate] = useState(new Date());
 
     useEffect(() => {
-         const {id,name,image,favorite,relasedate}= location.movies
+         const {id,name,image,favorite,type,relasedate}= location.movies
          setName(name)
          setImage(image)
          setFavorite(favorite)
+         setType(type)
          setRelasedate(relasedate)
      }, [location]);
      function handleSubmit(e) {
         e.preventDefault()
         const formData = {
-            movie: { name, image, favorite,relasedate }
+            movie: { name, image, favorite,type,relasedate }
         }
         formData.movie.relasedate=relasedate
         console.log(formData)
@@ -56,14 +58,14 @@ function EditMovie({movies,setMovie}) {
                 <input type="text" id="about" value={image} onChange={e => setImage(e.target.value)} />
             
             
-                <label htmlFor="about">favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select class="form-select" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(e.target.value)}>
+                <label htmlFor="about">Favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select class="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(e.target.value)}>
                     
                     <option value="true">Yes</option>
                     <option value="false">No</option>
-                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                <label htmlFor="about">Movie Release Date:</label>
+                <label htmlFor="about">Release Date:</label>
                 <DatePicker className="Datepicker" 
                     //selected={relasedate}
                     dateFormat="MM/dd/yyyy"
@@ -71,7 +73,22 @@ function EditMovie({movies,setMovie}) {
                     onChange={handleDate}
                     value={relasedate}
                 />
+                
+                <label htmlFor="about">Type: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select class="form-select typeclass" aria-label="Default select example" value={type} onChange={e=> setType(e.target.value)}>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Science fiction">Science fiction</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Thriller">Thriller</option>
+                </select>
             </div>
+
           
             
             <button type="submit">Edit Movie</button>
