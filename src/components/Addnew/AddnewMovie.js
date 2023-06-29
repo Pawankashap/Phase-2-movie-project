@@ -6,13 +6,22 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Container } from 'bootstrap-4-react';
 
-function AddnewMovie({name,setName,image,setImage,favorite,setFavorite,type,setType,relasedate,handleAddmovie,onChangeDate}) {
+
+function AddnewMovie({name,setName,image,setImage,favorite,setFavorite,type,setType,relasedate,setRelasedate,handleAddmovie,onChangeDate}) {
     // const [name, setName] = useState("");
     // const [image, setImage] = useState("");
     // const [favorite, setFavorite] = useState(false);
     // const [type, setType] = useState("Action");
     // const [relasedate, setRelasedate] = useState(new Date());
 
+    useEffect(() => {
+        setName('')
+        setImage('')
+        setFavorite(false)
+        setRelasedate(new Date())
+        setType('')
+       
+    }, [])
    
     //  function handleAddmovie(e) {
     //     e.preventDefault()
@@ -50,33 +59,27 @@ function AddnewMovie({name,setName,image,setImage,favorite,setFavorite,type,setT
         <h3>Add Movie</h3>
         <form onSubmit={handleAddmovie}>
             
-            <div className="mr-4 pr-4">
-                <label htmlFor="name">Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} />
+            <div className="formclass">
+                <label htmlFor="name" className="form-label">Movie Name</label>
+                <input type="text" className="form-control" placeholder="Enter Movie Name" id="name" value={name} onChange={e => setName(e.target.value)} />
             
             
-                <label htmlFor="about">Image URL:</label>
-                <input type="text" id="about" value={image} onChange={e => setImage(e.target.value)} />
+            
+                <label htmlFor="about" className="form-label">Image URL</label>
+                <input type="text" className="form-control" placeholder="Image URL" id="about" value={image} onChange={e => setImage(e.target.value)} />
             
             
-                <label htmlFor="about">Favorite:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select className="form-select favclass" aria-label="Default select example" value={favorite} onChange={e=> setFavorite(JSON.parse(e.target.value))}>
+                <label htmlFor="about" className="form-label">Favorite</label>
+                <select className="form-select favclass1" class="form-control"  aria-label="Default select example" value={favorite} onChange={e=> setFavorite(JSON.parse(e.target.value))}>
                     
                     <option value= 'true'>Yes</option>
                     <option value='false'>No</option>
-                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </select>
 
-                <label htmlFor="about">Release Date:</label>
-                <DatePicker className="Datepicker" 
-                    //selected={relasedate}
-                    dateFormat="MM/dd/yyyy"
-                    //onChange={date => setRelasedate(date)}
-                    onChange={onChangeDate}
-                    value={relasedate}
-                />
+             
                 
-                <label htmlFor="about">Type: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <select className="form-select typeclass" aria-label="Default select example" value={type} onChange={e=> setType(e.target.value)}>
+                <label htmlFor="about" className="form-label">Type </label>
+                <select className="form-select typeclass form-control" aria-label="Default select example" value={type} onChange={e=> setType(e.target.value)}>
                     <option value="Action">Action</option>
                     <option value="Comedy">Comedy</option>
                     <option value="Drama">Drama</option>
@@ -88,6 +91,16 @@ function AddnewMovie({name,setName,image,setImage,favorite,setFavorite,type,setT
                     <option value="Animation">Animation</option>
                     <option value="Thriller">Thriller</option>
                 </select>
+
+
+                <label htmlFor="about" className="form-label">Release Date:</label> <br/>
+                <DatePicker className="Datepicker form-control"
+                    //selected={relasedate}
+                    dateFormat="MM/dd/yyyy"
+                    //onChange={date => setRelasedate(date)}
+                    onChange={onChangeDate}
+                    value={relasedate}
+                />
             </div>
 
           

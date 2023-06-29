@@ -1,48 +1,25 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
-import myImage from '../../Images/homebanner.jpg'
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 import "../Home/Home.css"
-import { Carousel } from 'react-bootstrap';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import myImage from '../../Images/homebanner.jpg'
+import myImage1 from '../../Images/homebanner1.jpg'
+import myImage2 from '../../Images/homebanner2.jpg'
+
+
 function Home() {
-    const CustomArrow = ({ className, onClick }) => (
-        <button
-          className={`slick-arrow ${className}`}
-          onClick={onClick}
-          style={{ color: 'black',fontSize:'30px' }}
-        />
-      );
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 10,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: <CustomArrow className="slick-prev" />,
-        nextArrow: <CustomArrow className="slick-next" />
-      };
-   
-
-
     return (
-        <Container>
-        <Slider {...settings}>
-      <div>
-        <img src={myImage} alt="Slide 1" />
-      </div>
-      <div>
-        <img src={myImage} alt="Slide 2" />
-      </div>
-      <div>
-        <img src={myImage} alt="Slide 3" />
-      </div>
-      {/* Add more slide items as needed */}
-    </Slider>
-    </Container>
+      <div className="Home" >
+      <AliceCarousel 
+          autoPlay
+          autoPlayInterval={2500}
+      >
+        <img src={myImage} className="sliderimg"/>
+        <img src={myImage1} className="sliderimg"/>
+        <img src={myImage2} className="sliderimg"/>
+        
+      </AliceCarousel>
+    </div>
     )
 }
 
