@@ -29,7 +29,7 @@ function Moviescard({id,name,image,favorite,relasedate,type,movies,setMovie,hand
   const Deletemovie=(e)=>{
     console.log("delete button work ")
     //console.log(e.target.id)
-    handleDelete(e.target.id)
+    handleDelete(e.target.id,'favdel')
     
   
 
