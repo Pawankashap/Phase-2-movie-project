@@ -48,7 +48,6 @@ function App() {
           })
             .then(response => response.json())
             .then(data => {
-                console.log('before favorite update:  ',movies)
                 const updatedRecords = movies.map(record => {
                 if (record.id === parseInt(id,10)) {
                     return { ...record, 'favorite': isfavorite };
@@ -58,7 +57,6 @@ function App() {
                 setMovie(()=>updatedRecords)
             })
             .catch(error => console.log(error));
-            console.log('after favorite update:  ',movies)
     }
 
     const [name, setName] = useState("");
@@ -69,11 +67,9 @@ function App() {
 
     function handleAddmovie(e) {
         e.preventDefault()
-        console.log('on handle add movie  ')
         const formData = { name, image, favorite,type,relasedate }
         
         formData.relasedate=relasedate
-        console.log(formData)
         fetch('http://localhost:3001/movies', {
             method: 'POST',
             headers: {
@@ -83,8 +79,6 @@ function App() {
         })
             .then(response => response.json())
             .then(data => {
-            // Handle the response data
-            console.log(data);
             setMovie([...movies, data])
             })
             .catch(error => console.log(error));
