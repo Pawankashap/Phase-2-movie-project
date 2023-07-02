@@ -19,9 +19,6 @@ section {
     padding: 20px;
   }
   
-  /* form > input,
-  form > textarea,
-  form > fieldset { */
   input{
     width: 80%;
     margin: 10px;

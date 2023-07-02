@@ -1,11 +1,9 @@
-import React,{useState, useEffect} from "react";
+import React,{useEffect} from "react";
 import { Container } from 'bootstrap-4-react';
 import Moviescard from "../Moviescard/Moviescard";
 import "../Movies/Movies.css"
 
 function Favorites({movies,setMovie,filteredMovies,setFilteredMovies,handleDelete}) {
-  
-  // const [filteredMovies, setFilteredMovies] = useState([])
   
   useEffect(() => {
       setFilteredMovies(movies.filter(movie => movie.favorite === true));

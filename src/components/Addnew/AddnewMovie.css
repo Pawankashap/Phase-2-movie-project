@@ -14,14 +14,11 @@ section {
     flex-direction: column;
     align-items: flex-start;
     border: 1px solid black;
-    width: 100%;
+    width: 50%;
  
     padding: 20px;
   }
-  
-  /* form > input,
-  form > textarea,
-  form > fieldset { */
+
   input{
     width: 80%;
     margin: 10px;
@@ -56,9 +53,7 @@ section {
     font-weight: bold;
     border: none;
   }
-  /* .typeclass {
-    width:auto
-  } */
+
   .favclass{
     min-width: 70px;
   }

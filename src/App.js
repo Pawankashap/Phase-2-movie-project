@@ -1,4 +1,3 @@
-// import './App.css';
 import React, { useState,useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
@@ -8,7 +7,6 @@ import AddnewMovie from "./components/Addnew/AddnewMovie"
 import Home from "./components/Home/Home"
 import EditMovie from "./components/Movies/EditMovie";
 
-let flagtype;
 function App() {
 
     const [movies, setMovie] = useState([])
@@ -149,11 +147,7 @@ function App() {
         <Route  path="/editmovie/:id">
             <EditMovie name={name} setName={setName} image={image} setImage={setImage} favorite={favorite} setFavorite={setFavorite} type={type} setType={setType} relasedate={relasedate} setRelasedate={setRelasedate} onChangeDate={onChangeDate} handleEditmovie={handleEditmovie} setMovieid={setMovieid} />
         </Route>
-        {/* <Route path="/movies/:id">
-            <Favorites />
-        </Route> */}
-
-        <Route exact path="/">
+            <Route exact path="/">
             <Home />
         </Route>
         <Route path="*">

@@ -1,6 +1,4 @@
-import React,{useEffect,useState} from "react";
-import { useParams } from "react-router-dom"
-import { useLocation } from "react-router-dom";
+import React,{useEffect} from "react";
 import "../Addnew/AddnewMovie.css"
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -14,7 +12,7 @@ function AddnewMovie({name,setName,image,setImage,favorite,setFavorite,type,setT
         setFavorite(false)
         setRelasedate(new Date())
         setType('')
-       
+        
     }, [])
 
         return (

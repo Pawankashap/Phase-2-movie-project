@@ -1,10 +1,7 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import { Container } from 'bootstrap-4-react';
 import Moviescard from "../Moviescard/Moviescard";
 import "../Movies/Movies.css"
-
-const img_src = 'https://th.bing.com/th?id=OIP.J9DjjAB_23z9Fv_Y7czqHgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2';
-
 
 function Movies({movies,setMovie,handleDelete,handleFavorite}) {
     

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import { useParams } from "react-router-dom"
 import { useLocation } from "react-router-dom";
 import "../Movies/Movies.css"
@@ -12,57 +12,15 @@ function EditMovie({movies,setMovie,name,setName,image,setImage,favorite,setFavo
     const { id } = useParams()
     setMovieid(()=>id)
     const location = useLocation();
-    
-    // const [name, setName] = useState("");
-    // const [image, setImage] = useState("");
-    // const [favorite, setFavorite] = useState("");
-    // const [type, setType] = useState("");
-    // const [relasedate, setRelasedate] = useState(new Date());
 
     useEffect(() => {
-         const {id,name,image,favorite,type,relasedate}= location.movies
+         const {name,image,favorite,type,relasedate}= location.movies
          setName(name)
          setImage(image)
          setFavorite(favorite)
          setType(type)
          setRelasedate(relasedate)
      }, [location]);
-
-    //  function handleEditmovie(e) {
-    //     e.preventDefault()
-    //     const formData = { name, image, favorite,type,relasedate }
-        
-    //     formData.relasedate=relasedate
-    //     console.log(formData)
-
-
-    //     fetch(`http://localhost:3001/movies/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //            Accept: "application/json",
-    //           'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-    //       })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //           // Handle the response data or perform any necessary actions
-    //           console.log(data);
-    //         })
-    //         .catch(error => console.log(error));
-      
-
-    // }
-    
-    // const onChangeDate = (date) => {
-    //     const selectdate=date.toLocaleDateString('en-GB', {
-    //         day: '2-digit',
-    //         month: '2-digit',
-    //         year: 'numeric'
-    //       })
-    //     setRelasedate(selectdate);
-        
-    //   };
 
     return (
         <Container>
