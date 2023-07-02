@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# The Movie Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I have created a movie project that utilizes The Movie Database's internal API. The project showcases various movie details such as the movie image, name, release date, and genre. Users can create a customized movie list and filter their favorite movies. Additionally, users have the ability to edit movie details or delete movies they do not enjoy.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installing / Getting started
 
-### `npm start`
+<!-- A quick introduction of the minimal setup you need to get a hello world up & running. -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```shell
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm start
+
+```
+
+npm start script is used to execute the defined file in it without typing its execution command. Package.json file. "scripts"{ "start":"node index.js" }
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm test is a shortened version of npm run test ; npm is running the test command as defined in the package. json configuration file. So to answer your question, no it's not the same thing. npm isn't doing any testing on it's own; it is merely running the mocha command for you.
 
-### `npm run build`
+### Initial Configuration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm install react-router-dom@5`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm i bootstrap@5.3.0`
 
-### `npm run eject`
+Bootstrap uses NPM scripts for its build system. Our package. json includes convenient methods for working with the framework, including compiling code, running tests, and more. To use our build system and run our documentation locally, you'll need a copy of Bootstrap's source files and Node
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `npm install slick-carousel`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A slideshow component for cycling through elements—images or slides of text—like a carousel.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Developing
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Project developyment best way to use https://vercel.com, and it's free of cost avaliable.
+First Login vercel.com. after login Click on deshboard  click 'Add New' under the 'Overview' tab. 
 
-## Learn More
+![Alt text](image.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Select project click on the 'Import' button 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Alt text](image-1.png)
 
-### Code Splitting
+Then click 'Deploy' button to deploy project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Links
 
-### Analyzing the Bundle Size
+### Application Link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Frontend Movie App external link on vercel https://phase-2-movie-project.vercel.app/
+Backend Json server github link https://github.com/Pawankashap/phase-2-project-backend
 
-### Making a Progressive Web App
+### Images Link Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+https://wallpaperaccess.com/movies-collage
+https://pyxis.nymag.com
+https://encrypted-tbn0.gstatic.com
+https://encrypted-tbn0.gstatic.com
+https://www.voicesfromthebalcony.com
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Licensing
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+"The code in this project is licensed under MIT license."
