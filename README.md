@@ -1,6 +1,8 @@
 # The Movie Project
 
-I have created a movie project that utilizes The Movie Database's internal API. The project showcases various movie details such as the movie image, name, release date, and genre. Users can create a customized movie list and filter their favorite movies. Additionally, users have the ability to edit movie details or delete movies they do not enjoy.
+## Overview
+
+The purpose of the that utilizes The Movie Database's internal API. The project showcases various movie details such as the movie image, name, release date, and genre. Users can create a customized movie list and filter their favorite movies. Additionally, users have the ability to edit movie details or delete movies they do not enjoy.
 
 
 ## Installing / Getting started
@@ -9,7 +11,12 @@ I have created a movie project that utilizes The Movie Database's internal API. 
 
 ```shell
 
+npx create-react-app phase-2-movie-project
+
+cd phase-2-movie-project
+
 npm start
+
 
 ```
 
@@ -32,6 +39,24 @@ Bootstrap uses NPM scripts for its build system. Our package. json includes conv
 ### `npm install slick-carousel`
 
 A slideshow component for cycling through elements—images or slides of text—like a carousel.
+
+## Usage
+   
+   1. Add New Movie: You can add a movie of your choice by selecting the "Add New Movie" option from the menu. Here, you can provide details such as the movie name, image URL, favorite type, movie type, and release date.
+   2. Movies: Under the "Movies" menu, you can view all the movies you have added. If you wish to modify any details, simply click on the edit  button and update the necessary information. You can also mark any movie as your favorite.
+   3. Favorite Movies: All the movies you have marked as your favorite can be found under this menu.
+
+## Contributing
+
+We welcome contributions from the community. To contribute to the project, follow these steps:
+
+    Fork the repository.
+    Create a new branch.
+    Make your changes.
+    Test your changes.
+    Submit a pull request.
+
+Specify any guidelines or requirements for contributing, such as code style conventions or documentation standards.
 
 ## Developing
 
