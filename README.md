@@ -26,11 +26,11 @@ npm start script is used to execute the defined file in it without typing its ex
 React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.
 
 
+### Initial Configuration
+
 ### `npm test`
 
 npm test is a shortened version of npm run test ; npm is running the test command as defined in the package. json configuration file. So to answer your question, no it's not the same thing. npm isn't doing any testing on it's own; it is merely running the mocha command for you.
-
-### Initial Configuration
 
 ### `npm i bootstrap@5.3.0`
 
@@ -84,7 +84,7 @@ Then click 'Deploy' button to deploy project
 * https://pyxis.nymag.com
 * https://encrypted-tbn0.gstatic.com
 * https://encrypted-tbn0.gstatic.com
-*   https://www.voicesfromthebalcony.com
+* https://www.voicesfromthebalcony.com
 
 
 ## Licensing
