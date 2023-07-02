@@ -15,22 +15,22 @@ npx create-react-app phase-2-movie-project
 
 cd phase-2-movie-project
 
+npm install react-router-dom@5
+
 npm start
 
 
 ```
 
-npm start script is used to execute the defined file in it without typing its execution command. Package.json file. "scripts"{ "start":"node index.js" }
+npm start script is used to execute the defined file in it without typing its execution command. Package.json file. "scripts"{ "start":"node index.js" }.
+React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.
+
 
 ### `npm test`
 
 npm test is a shortened version of npm run test ; npm is running the test command as defined in the package. json configuration file. So to answer your question, no it's not the same thing. npm isn't doing any testing on it's own; it is merely running the mocha command for you.
 
 ### Initial Configuration
-
-### `npm install react-router-dom@5`
-
-React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.React Router DOM is an npm package that enables you to implement dynamic routing in a web app. It allows you to display pages and allow users to navigate them.
 
 ### `npm i bootstrap@5.3.0`
 
