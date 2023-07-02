@@ -50,16 +50,16 @@ Then click 'Deploy' button to deploy project
 
 ### Application Link
 
-Frontend Movie App external link on vercel https://phase-2-movie-project.vercel.app/
-Backend Json server github link https://github.com/Pawankashap/phase-2-project-backend
+* Frontend Movie App external link on vercel https://phase-2-movie-project.vercel.app/
+* Backend Json server github link https://github.com/Pawankashap/phase-2-project-backend
 
 ### Images Link Resources
 
-https://wallpaperaccess.com/movies-collage
-https://pyxis.nymag.com
-https://encrypted-tbn0.gstatic.com
-https://encrypted-tbn0.gstatic.com
-https://www.voicesfromthebalcony.com
+* https://wallpaperaccess.com/movies-collage
+* https://pyxis.nymag.com
+* https://encrypted-tbn0.gstatic.com
+* https://encrypted-tbn0.gstatic.com
+*   https://www.voicesfromthebalcony.com
 
 
 ## Licensing
